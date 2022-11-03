@@ -177,3 +177,4 @@ run extsort "$bin_name" transpose "$data" test.csv
 run schema "$bin_name" schema "$data"
 run validate "$bin_name" validate "$data" "$schema"
 run fetch "$bin_name" fetch --url-template {$urltemplate} \--jql {$jql} ----max-retries 0 -c response 
+run luajit "$bin_name" luajit map location_empty "tonumber\(Location\)==nil" "$data" 
